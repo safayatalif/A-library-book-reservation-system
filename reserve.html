@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reserve a Book — ShelfReserve</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Sora:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="navbar" aria-label="Primary">
+      <a class="brand" href="index.html">ShelfReserve</a>
+      <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="navMenu" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#features">Features</a></li>
+        <li><a href="reserve.html" class="active">Reserve</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="form-page">
+    <h1>Book reservation request</h1>
+    <p class="form-intro">Fill in the form to hold a title. Fields are validated in the browser before you see a confirmation summary.</p>
+
+    <form class="reservation-form" id="reservationForm" novalidate>
+      <div class="form-grid">
+        <div class="field" data-field="fullName">
+          <label for="fullName">Full name</label>
+          <input type="text" id="fullName" name="fullName" autocomplete="name" />
+          <span class="error-text" id="fullNameError"></span>
+        </div>
+
+        <div class="field" data-field="email">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" autocomplete="email" />
+          <span class="error-text" id="emailError"></span>
+        </div>
+
+        <div class="field" data-field="phone">
+          <label for="phone">Phone (01XXXXXXXXX)</label>
+          <input type="tel" id="phone" name="phone" placeholder="01712345678" />
+          <span class="error-text" id="phoneError"></span>
+        </div>
+
+        <div class="field" data-field="studentId">
+          <label for="studentId">Student / Faculty ID</label>
+          <input type="text" id="studentId" name="studentId" />
+          <span class="error-text" id="studentIdError"></span>
+        </div>
+
+        <div class="field" data-field="bookTitle">
+          <label for="bookTitle">Book title</label>
+          <input type="text" id="bookTitle" name="bookTitle" />
+          <span class="error-text" id="bookTitleError"></span>
+        </div>
+
+        <div class="field" data-field="copies">
+          <label for="copies">Copies needed</label>
+          <input type="number" id="copies" name="copies" min="1" max="5" />
+          <span class="error-text" id="copiesError"></span>
+        </div>
+
+        <div class="field" data-field="pickupDate">
+          <label for="pickupDate">Pickup date</label>
+          <input type="date" id="pickupDate" name="pickupDate" />
+          <span class="error-text" id="pickupDateError"></span>
+        </div>
+
+        <div class="field" data-field="returnDate">
+          <label for="returnDate">Return date</label>
+          <input type="date" id="returnDate" name="returnDate" />
+          <span class="error-text" id="returnDateError"></span>
+        </div>
+
+        <div class="field" data-field="department">
+          <label for="department">Department</label>
+          <select id="department" name="department">
+            <option value="">Select department</option>
+            <option value="CSE">Computer Science &amp; Engineering</option>
+            <option value="EEE">Electrical &amp; Electronic Engineering</option>
+            <option value="BBA">Business Administration</option>
+            <option value="ENG">English</option>
+            <option value="LAW">Law</option>
+          </select>
+          <span class="error-text" id="departmentError"></span>
+        </div>
+
+        <div class="field" data-field="memberType">
+          <label>Member type</label>
+          <div class="radio-group">
+            <label><input type="radio" name="memberType" value="Student" /> Student</label>
+            <label><input type="radio" name="memberType" value="Faculty" /> Faculty</label>
+            <label><input type="radio" name="memberType" value="Staff" /> Staff</label>
+          </div>
+          <span class="error-text" id="memberTypeError"></span>
+        </div>
+
+        <div class="field full" data-field="notes">
+          <label for="notes">Notes (optional)</label>
+          <textarea id="notes" name="notes" rows="4" placeholder="Edition, campus branch, or special request"></textarea>
+          <span class="error-text" id="notesError"></span>
+        </div>
+
+        <div class="field full" data-field="idCard">
+          <label for="idCard">Upload ID card (optional)</label>
+          <input type="file" id="idCard" name="idCard" accept=".jpg,.jpeg,.png,.pdf" />
+          <span class="error-text" id="idCardError"></span>
+        </div>
+
+        <div class="field full" data-field="terms">
+          <div class="checkbox-group">
+            <label>
+              <input type="checkbox" id="terms" name="terms" />
+              I agree to return the book on time and follow library rules.
+            </label>
+          </div>
+          <span class="error-text" id="termsError"></span>
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" class="btn btn-primary">Submit reservation</button>
+        <button type="reset" class="btn btn-reset">Reset</button>
+      </div>
+    </form>
+
+    <div class="success-box" id="successBox" role="status" aria-live="polite">
+      <h2>Reservation submitted</h2>
+      <p>Your request looks valid. Here is a summary of what you entered:</p>
+      <ul id="summaryList"></ul>
+    </div>
+  </main>
+
+  <footer class="site-footer" id="contact">
+    <div class="footer-inner">
+      <div>
+        <h2>Contact</h2>
+        <p>SEU Central Library, Level 2</p>
+        <p>Email: <a href="mailto:library@seu.edu.example">library@seu.edu.example</a></p>
+        <p>Phone: +880 2 5503 4100</p>
+      </div>
+      <div>
+        <h2>Follow</h2>
+        <ul class="social-links">
+          <li>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M14 8h3V4h-3c-2.2 0-4 1.8-4 4v2H7v4h3v8h4v-8h3l1-4h-4V8c0-.6.4-1 1-1z"/></svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="X / Twitter">
+              <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M18.9 3H21l-6.5 7.4L22 21h-6.2l-4.9-6.4L5.7 21H3.6l7-8L2 3h6.3l4.4 5.8L18.9 3zm-1.1 16.2h1.7L6.3 4.7H4.5l13.3 14.5z"/></svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M7 3h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4zm0 2a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H7zm11.5 1.5a1 1 0 1 1 0 2 1 1 0 0 1 0-2zM12 8a4 4 0 1 1 0 8 4 4 0 0 1 0-8zm0 2a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/></svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <p class="copyright">&copy; 2026 ShelfReserve — Library Book Reservation System</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/form.js"></script>
+</body>
+</html>
