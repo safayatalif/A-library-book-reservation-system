@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ShelfReserve — Library Book Reservation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Sora:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="navbar" aria-label="Primary">
+      <a class="brand" href="index.html">ShelfReserve</a>
+      <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="navMenu" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="reserve.html">Reserve</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-media" role="img" aria-label="Quiet library reading hall with tall bookshelves"></div>
+      <div class="hero-content">
+        <p class="brand-mark">ShelfReserve</p>
+        <h1>Reserve campus books before they leave the shelf</h1>
+        <p class="hero-lead">A simple reservation desk for students and faculty — browse, hold, and pick up without the queue.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="reserve.html">Book Now</a>
+          <a class="btn btn-secondary" href="#features">Learn More</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="features" id="features">
+      <div class="section-inner">
+        <h2>How ShelfReserve helps</h2>
+        <p class="section-lead">Three ways to keep your reading list moving through the semester.</p>
+        <div class="card-grid">
+          <article class="card">
+            <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=800&q=80" alt="Open books stacked on a wooden table" />
+            <h3>Featured Holds</h3>
+            <p>Lock popular course titles for 48 hours so you can collect them from the circulation desk.</p>
+            <a class="btn btn-primary btn-small" href="reserve.html">Reserve a book</a>
+          </article>
+          <article class="card">
+            <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?auto=format&fit=crop&w=800&q=80" alt="Library stacks with warm lighting" />
+            <h3>Study Spaces</h3>
+            <p>Pair your reservation with a quiet reading room slot when you need focused time on campus.</p>
+            <a class="btn btn-primary btn-small" href="reserve.html">Book a slot</a>
+          </article>
+          <article class="card">
+            <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=800&q=80" alt="Long aisle of library bookshelves" />
+            <h3>Pickup Alerts</h3>
+            <p>Get a clear pickup window and status so you never miss the book you requested.</p>
+            <a class="btn btn-primary btn-small" href="reserve.html">Start request</a>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="contact">
+    <div class="footer-inner">
+      <div>
+        <h2>Contact</h2>
+        <p>SEU Central Library, Level 2</p>
+        <p>Email: <a href="mailto:library@seu.edu.example">library@seu.edu.example</a></p>
+        <p>Phone: +880 2 5503 4100</p>
+      </div>
+      <div>
+        <h2>Follow</h2>
+        <ul class="social-links">
+          <li>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M14 8h3V4h-3c-2.2 0-4 1.8-4 4v2H7v4h3v8h4v-8h3l1-4h-4V8c0-.6.4-1 1-1z"/></svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="X / Twitter">
+              <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M18.9 3H21l-6.5 7.4L22 21h-6.2l-4.9-6.4L5.7 21H3.6l7-8L2 3h6.3l4.4 5.8L18.9 3zm-1.1 16.2h1.7L6.3 4.7H4.5l13.3 14.5z"/></svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M7 3h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4zm0 2a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H7zm11.5 1.5a1 1 0 1 1 0 2 1 1 0 0 1 0-2zM12 8a4 4 0 1 1 0 8 4 4 0 0 1 0-8zm0 2a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/></svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <p class="copyright">&copy; 2026 ShelfReserve — Library Book Reservation System</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
